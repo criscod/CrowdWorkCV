@@ -1,0 +1,80 @@
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:microtaskpurposes="http://west.uni-koblenz.de/ontologies/microtaskpurposes#"
+  >
+
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaAnnotation">
+    <skos:definition> Type of task where the main goal is to define annotations or labels that describe the content of the multimedia object </skos:definition>
+    <skos:prefLabel>MultimediaAnnotation</skos:prefLabel>
+    </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#ImageAnnotation">
+    <skos:definition> A case of Multimedia Annotation where the object to annotate is a picture </skos:definition>
+    <skos:prefLabel>Image Annotation</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaAnnotation"/>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#VideoAnnotation">
+    <skos:definition> A case of Multimedia Annotation where the object to annotate is a video </skos:definition>
+    <skos:prefLabel>Video Annotation</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaAnnotation"/>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#AudioAnnotation">
+    <skos:definition> A case of Multimedia Annotation where the object to annotate is an audio file </skos:definition>
+    <skos:prefLabel>Audio Annotation</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaAnnotation"/>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaSentimentAnalysis">
+    <skos:definition> Type of task where the main goal is to declare the sentiment provoked by the multimedia object (i.e. positive sentiment, negative sentiment or neutral sentiment)</skos:definition>
+    <skos:prefLabel>MultimediaSentimentAnalysis</skos:prefLabel>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#TextSentimentAnalysis">
+    <skos:definition> A case of Multimedia Sentiment Analysis where the object whose sentiment must be defined is a text (e.g. a tweet published in Twitter) </skos:definition>
+    <skos:prefLabel>Text Sentiment Analysis</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaSentimentAnalysis"/>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#DataCleansing">
+    <skos:definition> Type of task where the main goal is to clean data (e.g. correct typos, correct incorrect data values, eliminate inappropriate data items) </skos:definition>
+    <skos:prefLabel>Data Cleansing</skos:prefLabel>
+  </skos:Concept>
+  
+    <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#DataCompletion">
+    <skos:definition> Type of task where the main goal is to make the data complete (e.g. adding missing values and extending incomplete descriptions) </skos:definition>
+    <skos:prefLabel>Data Completion</skos:prefLabel>
+  </skos:Concept>
+  
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#ItemCategorization">
+    <skos:definition> Type of task where the main goal is to classify the given item into a particular category (e.g. categorize an image into the category "Sports" because it shows a scene of a football match) </skos:definition>
+    <skos:prefLabel>Item Categorization</skos:prefLabel>
+  </skos:Concept>
+  
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#DataCategorization">
+    <skos:definition> A case of ItemCategorization where the object to categorize is not multimedia content, but data instead(e.g. the metadata description of a resource in DBpedia) </skos:definition>
+    <skos:prefLabel>Data Categorization</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/microtaskpurposes#ItemCategorization"/>
+  </skos:Concept>
+  
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#DataInterlinking">
+    <skos:definition> Type of task where the main goal is to identify the connection between data (e.g. identify the relationship between one resource of the New York Times data set and one resource of DBpedia) </skos:definition>
+    <skos:prefLabel>Data Interlinking</skos:prefLabel>
+  </skos:Concept>
+  
+ 
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#TextTranslation">
+    <skos:definition> Type of task where the main goal is to translate a given text into a particular language (e.g. translate English text to Spanish) </skos:definition>
+    <skos:prefLabel>Text Translation </skos:prefLabel>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/microtaskpurposes#MultimediaTranscription">
+    <skos:definition> Type of task where the main goal is to transcribe (or generate the corresponding text to) the sound of a multimedia object (e.g. transcribe the text of a song in an audio file) </skos:definition>
+    <skos:prefLabel>MultimediaTranscription</skos:prefLabel>
+  </skos:Concept>
+  
+</rdf:RDF>

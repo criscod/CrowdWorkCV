@@ -1,0 +1,25 @@
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:crowdroles="http://west.uni-koblenz.de/ontologies/crowdroles#"
+  >
+
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/crowdroles#Role">
+    <skos:definition>Role that an agent adopts within an online labor marketplace</skos:definition>
+    <skos:prefLabel>canals</skos:prefLabel>
+  
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/crowdroles#Requester">
+    <skos:definition>Type of role that represents requesters on microtask marketplaces. Requesters publish microtasks that crowd workers can accomplish. </skos:definition>
+    <skos:prefLabel>Requester</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/crowdroles#Role"/>
+  </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/crowdroles#CrowdWorker">
+    <skos:definition>Type of role that represents crowd workers on microtask marketplaces. Crowd workers accomplish microtasks that are published / offered by requesters on marketplaces. </skos:definition>
+    <skos:prefLabel>Crowd Worker</skos:prefLabel>
+	<skos:broader rdf:resource="http://west.uni-koblenz.de/ontologies/crowdroles#Role"/>
+  </skos:Concept>
+  
+</rdf:RDF>

@@ -1,0 +1,8 @@
+Crowd Work CV uses:
+
+*	The FOAF vocabulary (RDFS)
+	See also: http://xmlns.com/foaf/spec/
+*	The SIOC ontology (OWL)
+	See also: http://www.w3.org/Submission/sioc-spec/
+*	The DISCO - ESCO vocabulary (SKOS)
+	See also: https://ec.europa.eu/esco/download/-/Download/skos

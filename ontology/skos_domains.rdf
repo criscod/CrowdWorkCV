@@ -1,0 +1,23 @@
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:domains="http://west.uni-koblenz.de/ontologies/domains#"
+  >
+
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/domains#Music">
+    <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Music"/>
+    <skos:prefLabel>Music</skos:prefLabel>
+    </skos:Concept>
+  
+   <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/domains#Movies">
+    <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Movies"/>
+    <skos:prefLabel>Movies</skos:prefLabel>
+    </skos:Concept>
+  
+  <skos:Concept rdf:about="http://west.uni-koblenz.de/ontologies/domains#Politics">
+    <rdfs:seeAlso rdf:resource="http://en.wikipedia.org/wiki/Politics"/>
+    <skos:prefLabel>Media</skos:prefLabel>
+    </skos:Concept>
+
+  
+</rdf:RDF>

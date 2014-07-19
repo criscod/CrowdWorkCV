@@ -1,0 +1,25 @@
+
+EXAMPLES OF SPARQL QUERIES THAT CAN BE ANSWERED WITH THE CROWD WORK CV
+
+Question: how good (measured in correctness of results and invested time) is this crowd worker in average in this type of task?
+
+SELECT AVG(?accuracy) AS average 
+WHERE{ <cvuri> hasWorkerExperience ?mex . ?mex cwcv:accuracy ?accuracy . ?mex basedOn ?m . ?m cwcv:hasMasterMicrotask ?mm . ?mm cwcv:purpose <typeoftaskuri>}
+
+Question: does this crowd worker have experience in this domain (e.g. music)?
+
+SELECT (COUNT(DISTINCT ?mex ) AS nexp
+WHERE{ <cvuri> hasWorkerExperience ?mex . 
+?mex basedOn ?m . ?m cwcv:hasMasterMicrotask ?mm . ?mm cwcv:domain <domainuri>}
+
+Question: in which marketplace can I mostly find tasks of this requester?
+
+SELECT ?mktplc
+WHERE{ ?cv cwcv:belongsTo ?agent . <urirequester> sioc:accountOf ?agent . ?cv cwcv:hasRequesterExperience ?rex . ?rex cwcv:basedOn ?m . ?m cwcv:publishedAt ?mktplc}
+
+Question: for which other requesters have workers, who have worked to the same requesters as me, worked?
+
+SELECT ?cv2
+WHERE{ <cvuri> cwcv:hasWorkerExperience ?mex . ?mex cwcv:basedOn ?m . ?m cwcv:hasMasterMicrotask ?mm . ?cv2 cwcv:hasRequesterExperience ?rex . ?rex cwcv:basedOn ?mm. ?cv3 cwcv:hasWorkerExperience ?mex2 . ?mex2 cwcv:basedOn ?m2 . ?m2 cwcv:hasMasterMicrotask ?mm . ?cv3 cwcv:hasWorkerExperience ?mex3 . ?mex3 cwcv:basedOn ?mi . ?mi cwcv:hasMasterMicrotask ?mmi . ?cv2 cwcv:hasRequesterExperience ?rex2 . ?rex2 cwcv:basedOn ?mm2 }
+
+

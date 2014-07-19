@@ -1,0 +1,101 @@
+# CREATE CV -------------------
+# Requester
+
+ex:req a foaf:Person;
+    foaf:name "John Smith";
+
+ex:acc1 a sioc:UserAccount; 
+    sioc:userName "jsmith";
+    cwcv:creationDate "072014";
+    accountOf ex:req;
+    cwcv:isRegisteredAt ex:ClickSense; 
+    cwcv:isRegisteredAt ex:GetPaid; 
+    cwcv:hasCrowdsourcingRole crowdroles:Requester;
+    
+ex:cv1 a cwcv:CV; 
+   cwcv:belongsTo ex:req;
+    
+# Alice (Crowd worker)
+
+ex:alice a foaf:Person; 
+    foaf:name "Alice";
+    
+ex:acc2 a sioc:UserAccount; 
+    sioc:userName "alice23";
+    cwcv:creationDate "072014";
+    accountOf ex:alice;
+    cwcv:isRegisteredAt ex:ClickSense;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+ex:acc3 a sioc:UserAccount;
+    sioc:userName "alice23";
+    cwcv:creationDate "072014";
+    accountOf ex:alice;
+    cwcv:isRegisteredAt ex:Neobux;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+ex:acc4 a sioc:UserAccount; 
+    sioc:userName "alice23";
+    cwcv:creationDate "072014";
+    accountOf ex:alice;
+    cwcv:isRegisteredAt ex:GetPaid; 
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+ex:acc5 a sioc:UserAccount; 
+    sioc:userName "alice23";
+    cwcv:creationDate "072014";
+    accountOf ex:alice;
+    cwcv:isRegisteredAt ex:MTurk; 
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+
+ex:cv2 a cwcv:CV;
+    cwcv:belongsTo ex:alice; 
+
+# REGISTER WORK -------------------
+
+# Requester 
+ex:rex a cwcv:RequesterExperience;
+	cwcv:byUserAccount ex:acc1;
+
+ex:cv1 cwcv:hasRequesterExperience ex:rex;
+
+ex:mm1 cwcv:publishedAt ex:ClickSense;
+    cwcv:publishedAt ex:GetPaid;
+    cwcv:purpose microtaskpurposes:SentimentAnalysis; 
+
+# Alice (Crowd worker)
+   
+# Qualification at Neobux
+
+ex:cv2 cwcv:obtainedQualification ex:q1;       
+    
+ex:q1 a cwcv:Qualification;
+    cwcv:name "Spanish A1";
+    cwcv:isRelatedToCompetence disco:Capability1;
+
+ex:mm2 a cwcv:MasterMicrotask;
+    cwcv:hasQualification ex:q1;
+    cwcv:publishedAt ex:Neobux;
+    cwcv:purpose microtaskpurposes:TextTranslation
+    
+#GetPaid work
+    
+ex:cv2 cwcv:hasWorkerExperience ex:mex1;
+ex:mex1 a cwcv:WorkerExperience; 
+    ex:mex cwcv:basedOn ex:m1;
+    cwcv:byUserAccount ex:acc2;
+    
+ex:m1 a cwcv:Microtask;
+    cwcv:hasMasterMicrotask ex:mm1;
+    
+# MTurk work
+
+ex:mex2 a cwcv:WorkerExperience; 
+    ex:mex cwcv:basedOn ex:m2; 
+    cwcv:byUserAccount ex:acc2;  
+ex:mm3 a cwcv:MasterMicrotask;
+    cwcv:publishedAt ex:MTurk
+    cwcv:purpose microtaskpurposes:SentimentAnalysis
+ex:m2 a cwcv:Microtask;
+    cwcv:hasMasterMicrotask ex:mm3;
+        
+
+
+    
