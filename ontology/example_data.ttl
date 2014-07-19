@@ -90,10 +90,12 @@ ex:m1 a cwcv:Microtask;
 
 ex:mex2 a cwcv:WorkerExperience; 
     ex:mex cwcv:basedOn ex:m2; 
-    cwcv:byUserAccount ex:acc2;  
+    cwcv:byUserAccount ex:acc2; 
+     cwcv:accuracy "0.8"; 
 ex:mm3 a cwcv:MasterMicrotask;
     cwcv:publishedAt ex:MTurk
-    cwcv:purpose microtaskpurposes:SentimentAnalysis
+    cwcv:purpose microtaskpurposes:SentimentAnalysis;
+     cwcv:accuracy "0.95";
 ex:m2 a cwcv:Microtask;
     cwcv:hasMasterMicrotask ex:mm3;
         
