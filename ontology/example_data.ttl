@@ -81,6 +81,7 @@ ex:cv2 cwcv:hasWorkerExperience ex:mex1;
 ex:mex1 a cwcv:WorkerExperience; 
     ex:mex cwcv:basedOn ex:m1;
     cwcv:byUserAccount ex:acc2;
+    cwcv:accuracy "0.9";
     
 ex:m1 a cwcv:Microtask;
     cwcv:hasMasterMicrotask ex:mm1;
