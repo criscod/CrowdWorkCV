@@ -2,7 +2,7 @@
 
 Microtask crowdsourcing has shown to be a successful method for engaging humans to accomplish tasks that, even simple and repetitive, cannot so effectively be carried out by fully automatic techniques. With an increasing micro-labor supply and a larger available workforce, new microtask platforms have emerged providing an extensive list of marketplaces where microtasks are offered by requesters and completed by crowd workers. 
 
-One of the aspects of micro work that remains under discussion is the process of quality assurance. Besides methods to identify inappropriate actions (e.g.scammers), finding a suitable match between available microtasks and crowd workers has been acknowledged as a promising way to improve the quality of crowd work. The current microtask crowdsourcing infrastructure does not offer the possibility to be recognized for already accomplished and offered work in different microtask platforms. This lack of information leads to uninformed decisions in selection processes. 
+One of the aspects of micro work that remains under discussion is the process of quality assurance. Besides methods to identify inappropriate actions (on both sides of crowd work), finding a suitable match between available microtasks and crowd workers has been acknowledged as a promising way to improve the quality of crowd work. The current microtask crowdsourcing infrastructure does not offer the possibility to be recognized for already accomplished and offered work in different microtask platforms. This lack of information leads to uninformed decisions in selection processes. 
 
 To overcome this limitation we are developing Crowd Work CV, an approach to bring Curriculum Vitae into microtask crowdsourcing.
 
