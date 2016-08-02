@@ -1,104 +1,113 @@
 # CREATE CV -------------------
 # Requester
 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cwcv: <http://west.uni-koblenz.de/ontologies/crowdworkcv#> .
+@prefix ex: <http://example.org/data/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix crowdroles: <http://west.uni-koblenz.de/ontologies/crowdroles#> .
+@prefix microtaskpurposes: <http://west.uni-koblenz.de/ontologies/microtaskpurposes#> .
+@prefix domains: <http://west.uni-koblenz.de/ontologies/domains#> .
+@prefix disco: <https://ec.europa.eu/esco/skos> . 
+# disco IRI *
+
 ex:req a foaf:Person;
-    foaf:name "John Smith";
+    foaf:name "John Smith" .
 
 ex:acc1 a sioc:UserAccount; 
     sioc:userName "jsmith";
     cwcv:creationDate "072014";
-    accountOf ex:req;
+    sioc:accountOf ex:req;
     cwcv:isRegisteredAt ex:ClickSense; 
     cwcv:isRegisteredAt ex:GetPaid; 
-    cwcv:hasCrowdsourcingRole crowdroles:Requester;
+    cwcv:hasCrowdsourcingRole crowdroles:Requester .
     
 ex:cv1 a cwcv:CV; 
-   cwcv:belongsTo ex:req;
+   cwcv:belongsTo ex:req .
     
 # Alice (Crowd worker)
 
 ex:alice a foaf:Person; 
-    foaf:name "Alice";
+    foaf:name "Alice" .
     
 ex:acc2 a sioc:UserAccount; 
     sioc:userName "alice23";
     cwcv:creationDate "072014";
-    accountOf ex:alice;
+    sioc:accountOf ex:alice;
     cwcv:isRegisteredAt ex:ClickSense;
-    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker .
 ex:acc3 a sioc:UserAccount;
     sioc:userName "alice23";
     cwcv:creationDate "072014";
-    accountOf ex:alice;
+    sioc:accountOf ex:alice;
     cwcv:isRegisteredAt ex:Neobux;
-    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker .
 ex:acc4 a sioc:UserAccount; 
     sioc:userName "alice23";
     cwcv:creationDate "072014";
-    accountOf ex:alice;
+    sioc:accountOf ex:alice;
     cwcv:isRegisteredAt ex:GetPaid; 
-    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker .
 ex:acc5 a sioc:UserAccount; 
     sioc:userName "alice23";
     cwcv:creationDate "072014";
-    accountOf ex:alice;
+    sioc:accountOf ex:alice;
     cwcv:isRegisteredAt ex:MTurk; 
-    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker;
+    cwcv:hasCrowdsourcingRole crowdroles:CrowdWorker .
 
 ex:cv2 a cwcv:CV;
-    cwcv:belongsTo ex:alice; 
+    cwcv:belongsTo ex:alice . 
 
 # REGISTER WORK -------------------
 
 # Requester 
 ex:rex a cwcv:RequesterExperience;
-	cwcv:byUserAccount ex:acc1;
+	cwcv:byUserAccount ex:acc1 .
 
-ex:cv1 cwcv:hasRequesterExperience ex:rex;
+ex:cv1 cwcv:hasRequesterExperience ex:rex .
 
 ex:mm1 cwcv:publishedAt ex:ClickSense;
     cwcv:publishedAt ex:GetPaid;
-    cwcv:purpose microtaskpurposes:SentimentAnalysis; 
+    cwcv:purpose microtaskpurposes:SentimentAnalysis . 
 
 # Alice (Crowd worker)
    
 # Qualification at Neobux
 
-ex:cv2 cwcv:obtainedQualification ex:q1;       
+ex:cv2 cwcv:obtainedQualification ex:q1 .       
     
 ex:q1 a cwcv:Qualification;
     cwcv:name "Spanish A1";
-    cwcv:isRelatedToCompetence disco:Capability1;
+    cwcv:isRelatedToCompetence disco:Capability1  .
 
 ex:mm2 a cwcv:MasterMicrotask;
     cwcv:hasQualification ex:q1;
     cwcv:publishedAt ex:Neobux;
-    cwcv:purpose microtaskpurposes:TextTranslation
+    cwcv:purpose microtaskpurposes:TextTranslation .
     
 #GetPaid work
     
-ex:cv2 cwcv:hasWorkerExperience ex:mex1;
+ex:cv2 cwcv:hasWorkerExperience ex:mex1 .
 ex:mex1 a cwcv:WorkerExperience; 
-    ex:mex cwcv:basedOn ex:m1;
+	cwcv:basedOn ex:m1;
     cwcv:byUserAccount ex:acc2;
-    cwcv:accuracy "0.9";
+    cwcv:accuracy "0.9" .
     
 ex:m1 a cwcv:Microtask;
-    cwcv:hasMasterMicrotask ex:mm1;
+    cwcv:hasMasterMicrotask ex:mm1 .
     
 # MTurk work
 
 ex:mex2 a cwcv:WorkerExperience; 
-    ex:mex cwcv:basedOn ex:m2; 
+		cwcv:basedOn ex:m2; 
     cwcv:byUserAccount ex:acc2; 
-     cwcv:accuracy "0.8"; 
+     cwcv:accuracy "0.8" . 
 ex:mm3 a cwcv:MasterMicrotask;
-    cwcv:publishedAt ex:MTurk
+    cwcv:publishedAt ex:MTurk;
     cwcv:purpose microtaskpurposes:SentimentAnalysis;
-     cwcv:accuracy "0.95";
+     cwcv:accuracy "0.95" .
 ex:m2 a cwcv:Microtask;
-    cwcv:hasMasterMicrotask ex:mm3;
+    cwcv:hasMasterMicrotask ex:mm3 .
         
-
-
-    
